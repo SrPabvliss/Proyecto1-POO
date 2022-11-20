@@ -8,7 +8,7 @@ public class Pan extends Alimentos {
     private boolean isFresco;
 
     public Pan() {
-        super(new GregorianCalendar(2023, 2, 11).getTime(), false, 1.50, false, "SuCasa");
+        super(new GregorianCalendar(2023, 2, 11).getTime(), false, 1.50, false, "SuCasa", "Funda de pan");
         this.tipoMasa = "Integral";
         this.isFresco = true;
     }

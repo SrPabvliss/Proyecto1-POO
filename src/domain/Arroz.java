@@ -8,7 +8,7 @@ public class Arroz extends Alimentos {
     private int cantidadLibras;
 
     public Arroz() {
-        super(new GregorianCalendar(2023, 2, 11).getTime(), true, 1.0, true, "SuperExtra");
+        super(new GregorianCalendar(2023, 2, 11).getTime(), true, 3.0, true, "SuperExtra", "Saco de arroz");
         this.tipoArroz = "Blanco";
         this.cantidadLibras = 5;
     }

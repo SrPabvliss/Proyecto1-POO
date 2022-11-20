@@ -9,7 +9,7 @@ public class CubetaHuevos extends Alimentos {
     private String tamanio;
 
     public CubetaHuevos(){
-        super(new GregorianCalendar(2023, 2, 11).getTime(), false, 3.5, true, "Aki");
+        super(new GregorianCalendar(2023, 2, 11).getTime(), false, 3.5, true, "Aki", "Cubeta de huevos");
         this.tipoHuevos = "Runas";
         this.tamanio = "Extra grandes";
     }
