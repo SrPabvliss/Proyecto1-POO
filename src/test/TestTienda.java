@@ -22,10 +22,10 @@ public class TestTienda {
         orden1.agregarProducto(pan);
         orden1.agregarProducto(huevos);
         orden1.agregarProducto(leche);
-//        orden1.mostrarOrden();
+        orden1.mostrarOrden();
         
-        Factura factura = new Factura ("Pablo Villacres", 1850046317);
-        factura.generarFactura(orden1, "pablomartinvillacres@gmail.com");
+//        Factura factura = new Factura ("Pablo Villacres", 1850046317);
+//        factura.generarFactura(orden1, "pablomartinvillacres@gmail.com");
     }
     
 }

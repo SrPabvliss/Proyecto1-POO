@@ -8,8 +8,8 @@ public class Leche extends Alimentos {
     private String tipoLeche;
 
     public Leche() {
-        super(new GregorianCalendar(2023, 2, 11).getTime(), true, 2.50, true, "nutrileche", "Bolsa de leche");
-        this.cantidadLitros = 2;
+        super(new GregorianCalendar(2023, 2, 11).getTime(), true, 0.80, true, "Nutrileche", "Bolsa de leche");
+        this.cantidadLitros = 1;
         this.tipoLeche = "Entera";
     }
     
