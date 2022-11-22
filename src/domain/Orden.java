@@ -12,7 +12,8 @@ public class Orden {
         this.idOrden = ++Orden.contadorOrdenes;
         this.producto = new Producto[MAXPRODUCTOS];
     }
-
+    
+    //metodo para agregar productos al vector productos
     public void agregarProducto(Producto producto) {
         if (this.contadorProductos < Orden.MAXPRODUCTOS) {
             this.producto[this.contadorProductos++] = producto;
