@@ -3,7 +3,6 @@ package test;
 import domain.*;
 import domain.OpcionAlimentacion;
 import domain.Orden;
-import domain.Orden;
 import java.util.Scanner;
 
 public class Main {

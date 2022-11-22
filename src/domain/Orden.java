@@ -22,15 +22,15 @@ public class Orden {
         }
 
     }
-    
-        public double calcularTotal() {
+
+    public double calcularTotal() {
         double total = 0;
         for (int i = 0; i < this.contadorProductos; i++) {
-            total += (this.producto[i].getPrecio())*this.producto[i].getCantidad();
+            total += (this.producto[i].getPrecio()) * this.producto[i].getCantidad();
         }
         return total;
     }
-        
+
     public void mostrarOrden() {
         System.out.println("Id orden : " + this.idOrden + "\n");
 
@@ -40,7 +40,7 @@ public class Orden {
             System.out.print("Precio por unidad: " + this.producto[i].getPrecio() + "\t\t");
             System.out.println("Precio total : " + (this.producto[i].getPrecio()) * this.producto[i].getCantidad() + "\n");
         }
-        
+
         System.out.println("Valor total de la orden : " + this.calcularTotal());
 
     }

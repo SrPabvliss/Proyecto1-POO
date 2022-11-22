@@ -13,13 +13,12 @@ public class Leche extends Alimentos {
         this.tipoLeche = "Entera";
     }
     
-     public Leche(int cantidad) {
+    public Leche(int cantidad) {
         super(new GregorianCalendar(2023, 2, 11).getTime(), true, 2.50, true, "nutrileche", "Bolsa de leche", cantidad);
         this.cantidadLitros = 2;
         this.tipoLeche = "Entera";
     }
     
-
     public double getCantidadLitros() {
         return cantidadLitros;
     }

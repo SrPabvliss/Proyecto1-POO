@@ -7,11 +7,6 @@ public class Alimentos extends Producto {
     protected Date fechaexpiracion;
     protected boolean procesado;
 
-    public Alimentos(Date fechaexpiracion, boolean procesado) {
-        this.fechaexpiracion = fechaexpiracion;
-        this.procesado = procesado;
-    }
-
     public Alimentos(Date fechaexpiracion, boolean procesado, double precio, boolean disponibilidad, String marca, String name) {
         super(precio, disponibilidad, marca, name);
         this.fechaexpiracion = fechaexpiracion;
