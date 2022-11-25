@@ -97,11 +97,12 @@ public class Main {
 
                 case 2:
                     OpcionAlimentacion opcion2 = new OpcionAlimentacion();
-                    boolean go = true;
+                    boolean go = false;
                     do {
                         System.out.println("Te presento los productos de higiene disponibles");
                         System.out.println("1.Jabon\n2.PastaDental\n3.Champu\n4.Regresar ");
                         regresarMenu = false;
+                        go = true;
                         int accion = sc.nextInt();
                         switch (accion) {
                             case 1:
@@ -162,7 +163,7 @@ public class Main {
                                 throw new AssertionError();
                         }
                         if (go == true && regresarMenu == false) {
-                            avanzar = opcion2.repetirOpcion(go);
+                            go = opcion2.repetirOpcion(go);
                             regresarMenu = true;
                         }
                     } while (go == false);
@@ -170,21 +171,15 @@ public class Main {
 
                 case 3:
                     OpcionAlimentacion opcion3 = new OpcionAlimentacion();
-                    boolean valid = true;
+                    boolean valid = false;
                     do {
-                        System.out.println("Contamos con: \n"
-                                + "1. Gasas \n"
-                                + "2. Paracetamol \n"
-                                + "3. Vitaminas \n"
-                                + "Si desea regresar ingrese la opcion 4");
+                        System.out.println("Contamos con: \n1. Gasas \n2. Paracetamol \n3. Vitaminas \n4. Regresar");
                         regresarMenu = false;
+                        valid = true;
                         int act = sc.nextInt();
                         switch (act) {
                             case 1:
-                                System.out.println("Tenemos diferentes tipos de gasas"
-                                        + "\n 1.Monofilamento"
-                                        + "\n 2.Multifilamento"
-                                        + "\n 3.Tafetan");
+                                System.out.println("Tenemos diferentes tipos de gasas\n 1.Monofilamento\n 2.Multifilamento\n 3.Tafetan");
                                 Gasas gasa1 = new Gasas();
                                 Gasas gasa2 = new Gasas();
                                 Gasas gasa3 = new Gasas();
@@ -223,29 +218,26 @@ public class Main {
                                 orden.mostrarOrden();
                                 break;
                             case 3:
-                                System.out.println("Tenemos diferentes sabores de vitaminas"
-                                        + "\n 1.Naranja"
-                                        + "\n 2.Sandia"
-                                        + "\n 3.Manzana");  
-                                        Vitaminas vit1 = new Vitaminas();
-                                        Vitaminas vit2 = new Vitaminas();
-                                        Vitaminas vit3 = new Vitaminas ();
-                                        vit2.setTipodevitamina("C");
-                                        vit2.setSabordelavitamina("Naranja");
-                                        vit2.setContenido(20);
-                                        vit2.setPresentacion("Capsula");
-                                        vit2.setPrecio(21.05);
-                                        vit2.setMarca("Microsules");
-                                        vit2.setName("Vitamina C");
-                                        vit3.setTipodevitamina("A");
-                                        vit3.setSabordelavitamina("Manzana");
-                                        vit3.setContenido(30);
-                                        vit3.setPresentacion("Pastillas");
-                                        vit3.setPrecio(11.05);
-                                        vit3.setMarca("Mediswiss");
-                                        vit3.setName("Vitamina A");
-                                        opcion3.desplegarMenu(vit1, vit2, vit3, orden);
-                                        orden.mostrarOrden();
+                                System.out.println("Tenemos diferentes sabores de vitaminas\n 1.Naranja\n 2.Sandia\n 3.Manzana");
+                                Vitaminas vit1 = new Vitaminas();
+                                Vitaminas vit2 = new Vitaminas();
+                                Vitaminas vit3 = new Vitaminas();
+                                vit2.setTipodevitamina("C");
+                                vit2.setSabordelavitamina("Naranja");
+                                vit2.setContenido(20);
+                                vit2.setPresentacion("Capsula");
+                                vit2.setPrecio(21.05);
+                                vit2.setMarca("Microsules");
+                                vit2.setName("Vitamina C");
+                                vit3.setTipodevitamina("A");
+                                vit3.setSabordelavitamina("Manzana");
+                                vit3.setContenido(30);
+                                vit3.setPresentacion("Pastillas");
+                                vit3.setPrecio(11.05);
+                                vit3.setMarca("Mediswiss");
+                                vit3.setName("Vitamina A");
+                                opcion3.desplegarMenu(vit1, vit2, vit3, orden);
+                                orden.mostrarOrden();
 
                                 break;
                             case 4:
@@ -256,7 +248,7 @@ public class Main {
                                 System.out.println("Opcion no valida");
                         }
                         if (valid == true && regresarMenu == false) {
-                            avanzar = opcion3.repetirOpcion(valid);
+                            valid = opcion3.repetirOpcion(valid);
                             regresarMenu = true;
                         }
                     } while (valid == false);
