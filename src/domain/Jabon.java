@@ -7,7 +7,7 @@ public class Jabon extends Higiene{
     private String acabado;
     private String tipojabon;
     public Jabon(){
-        super(new GregorianCalendar(2023, 2, 11).getTime(), true, 1.50, true, "Dove", "Caja de jabones");
+        super(new GregorianCalendar(2023, 2, 11).getTime(), "Buena", 1.50, true, "Dove", "Caja de jabones");
         this.acabado = "Mate";
         this.tipojabon = "Piel Neutra";
     }

@@ -8,7 +8,7 @@ public class PastaDental extends Higiene{
     private String elimbacterias;
 
     public PastaDental() {
-        super(new GregorianCalendar(2023, 2, 11).getTime(), true, 2 , true, "Colgate", "Caja de dentifrico");
+        super(new GregorianCalendar(2023, 2, 11).getTime(), "Buena", 2 , true, "Colgate", "Caja de dentifrico");
         this.sabor = "Menta";
         this.elimbacterias = "99.9 %";
     }

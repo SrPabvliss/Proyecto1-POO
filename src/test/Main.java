@@ -106,7 +106,7 @@ public class Main {
                         int accion = sc.nextInt();
                         switch (accion) {
                             case 1:
-                                System.out.println("Contamos con 2 opciones de jabon:\n1.Piel Neutra\n2.Piel Seca\n3.Piel Grasa");
+                                System.out.println("Contamos con 3 opciones de jabon:\n1.Piel Neutra\n2.Piel Seca\n3.Piel Grasa");
                                 Jabon jabon1 = new Jabon();
                                 Jabon jabon2 = new Jabon();
                                 Jabon jabon3 = new Jabon();
@@ -114,16 +114,18 @@ public class Main {
                                 jabon2.setAcabado("Brilloso");
                                 jabon2.setMarca("Nivea");
                                 jabon2.setPrecio(1);
+                                jabon3.setCalidad("Excelente");
                                 jabon3.setTipojabon("Piel Grasa");
                                 jabon3.setAcabado("Natural");
                                 jabon3.setMarca("Palmolive");
                                 jabon3.setPrecio(1.25);
+                                jabon3.setCalidad("Superior");
                                 opcion2.desplegarMenu(jabon1, jabon2, jabon3, orden);
                                 orden.mostrarOrden();
 
                                 break;
                             case 2:
-                                System.out.println("Contamos con 2 opciones de dentifrico:\n1.Sabor menta\n2.Sabor chicle\n3.Sin sabor");
+                                System.out.println("Contamos con 3 opciones de dentifrico:\n1.Sabor menta\n2.Sabor chicle\n3.Sin sabor");
                                 PastaDental pasta1 = new PastaDental();
                                 PastaDental pasta2 = new PastaDental();
                                 PastaDental pasta3 = new PastaDental();
@@ -131,14 +133,16 @@ public class Main {
                                 pasta2.setSabor("Chicle");
                                 pasta2.setMarca("Fortident");
                                 pasta2.setPrecio(1.75);
+                                pasta2.setCalidad("Excelente");
                                 pasta3.setElimbacterias("99 %");
                                 pasta3.setSabor("Neutro");
                                 pasta3.setPrecio(0.75);
+                                pasta3.setCalidad("Buena");
                                 opcion2.desplegarMenu(pasta1, pasta2, pasta3, orden);
                                 orden.mostrarOrden();
                                 break;
                             case 3:
-                                System.out.println("Contamos con 2 opciones de dentifrico:\n1.Caacao\n2.Menta\n3.Coco");
+                                System.out.println("Contamos con 3 opciones de dentifrico:\n1.Caacao\n2.Menta\n3.Coco");
                                 Champu champu1 = new Champu();
                                 Champu champu2 = new Champu();
                                 Champu champu3 = new Champu();
@@ -146,10 +150,12 @@ public class Main {
                                 champu2.setCantidadsales("Contiene sales");
                                 champu2.setMarca("ColaDeCaballo");
                                 champu2.setPrecio(4.25);
+                                champu2.setCalidad("Regular");
                                 champu3.setFragancia("Coco");
                                 champu3.setCantidadsales("Sin sales");
                                 champu3.setMarca("Pantene");
                                 champu3.setPrecio(3.25);
+                                champu3.setCalidad("Excelente");
                                 opcion2.desplegarMenu(champu1, champu2, champu3, orden);
                                 orden.mostrarOrden();
                                 break;

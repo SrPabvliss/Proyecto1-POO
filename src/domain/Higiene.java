@@ -5,9 +5,9 @@ import java.util.Date;
 public class Higiene extends Producto {
     
     protected Date fechaExpi;
-    protected boolean calidad;
+    protected String calidad;
 
-    public Higiene(Date fechaExpi, boolean calidad, double precio, boolean disponibilidad, String marca, String name) {
+    public Higiene(Date fechaExpi, String calidad, double precio, boolean disponibilidad, String marca, String name) {
         super(precio, disponibilidad, marca, name);
         this.fechaExpi = fechaExpi;
         this.calidad = calidad;
@@ -21,11 +21,11 @@ public class Higiene extends Producto {
         this.fechaExpi = fechaExpi;
     }
 
-    public boolean isCalidad() {
+    public String isCalidad() {
         return calidad;
     }
 
-    public void setCalidad(boolean calidad) {
+    public void setCalidad(String calidad) {
         this.calidad = calidad;
     }
 

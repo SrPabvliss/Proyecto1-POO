@@ -8,7 +8,7 @@ public class Champu extends Higiene{
     private String cantidadsales;
 
     public Champu() {
-        super(new GregorianCalendar(2023, 2, 11).getTime(), true, 4.50 , true, "Biolans", "Frassco de Champu");
+        super(new GregorianCalendar(2023, 2, 11).getTime(), "Buena", 4.50 , true, "Biolans", "Frassco de Champu");
         this.fragancia = "Cacao";
         this.cantidadsales = "Sin sales";
     }
