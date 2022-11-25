@@ -101,7 +101,7 @@ public class Main {
                     do {
                         System.out.println("Te presento los productos de higiene disponibles");
                         System.out.println("1.Jabon\n2.PastaDental\n3.Champu\n4.Regresar ");
-                         regresarMenu = false;
+                        regresarMenu = false;
                         int accion = sc.nextInt();
                         switch (accion) {
                             case 1:
@@ -119,40 +119,40 @@ public class Main {
                                 jabon3.setPrecio(1.25);
                                 opcion2.desplegarMenu(jabon1, jabon2, jabon3, orden);
                                 orden.mostrarOrden();
-                                
+
                                 break;
-                             case 2:
-                                 System.out.println("Contamos con 2 opciones de dentifrico:\n1.Sabor menta\n2.Sabor chicle\n3.Sin sabor");
-                                 PastaDental pasta1 = new PastaDental();
-                                 PastaDental pasta2 = new PastaDental();
-                                 PastaDental pasta3 = new PastaDental();
-                                 pasta2.setElimbacterias("97.3 %");
-                                 pasta2.setSabor("Chicle");
-                                 pasta2.setMarca("Fortident");
-                                 pasta2.setPrecio(1.75);
-                                 pasta3.setElimbacterias("99 %");
-                                 pasta3.setSabor("Neutro");
-                                 pasta3.setPrecio(0.75);
-                                 opcion2.desplegarMenu(pasta1, pasta2, pasta3, orden);
-                                 orden.mostrarOrden();
+                            case 2:
+                                System.out.println("Contamos con 2 opciones de dentifrico:\n1.Sabor menta\n2.Sabor chicle\n3.Sin sabor");
+                                PastaDental pasta1 = new PastaDental();
+                                PastaDental pasta2 = new PastaDental();
+                                PastaDental pasta3 = new PastaDental();
+                                pasta2.setElimbacterias("97.3 %");
+                                pasta2.setSabor("Chicle");
+                                pasta2.setMarca("Fortident");
+                                pasta2.setPrecio(1.75);
+                                pasta3.setElimbacterias("99 %");
+                                pasta3.setSabor("Neutro");
+                                pasta3.setPrecio(0.75);
+                                opcion2.desplegarMenu(pasta1, pasta2, pasta3, orden);
+                                orden.mostrarOrden();
                                 break;
-                             case 3:
+                            case 3:
                                 System.out.println("Contamos con 2 opciones de dentifrico:\n1.Caacao\n2.Menta\n3.Coco");
-                                 Champu champu1 = new Champu();
-                                 Champu champu2 = new Champu();
-                                 Champu champu3 = new Champu();
-                                 champu2.setFragancia("Menta");
-                                 champu2.setCantidadsales("Contiene sales");
-                                 champu2.setMarca("ColaDeCaballo");
-                                 champu2.setPrecio(4.25);
-                                 champu3.setFragancia("Coco");
-                                 champu3.setCantidadsales("Sin sales");
-                                 champu3.setMarca("Pantene");
-                                 champu3.setPrecio(3.25);
-                                 opcion2.desplegarMenu(champu1, champu2, champu3, orden);
-                                 orden.mostrarOrden();
+                                Champu champu1 = new Champu();
+                                Champu champu2 = new Champu();
+                                Champu champu3 = new Champu();
+                                champu2.setFragancia("Menta");
+                                champu2.setCantidadsales("Contiene sales");
+                                champu2.setMarca("ColaDeCaballo");
+                                champu2.setPrecio(4.25);
+                                champu3.setFragancia("Coco");
+                                champu3.setCantidadsales("Sin sales");
+                                champu3.setMarca("Pantene");
+                                champu3.setPrecio(3.25);
+                                opcion2.desplegarMenu(champu1, champu2, champu3, orden);
+                                orden.mostrarOrden();
                                 break;
-                             case 4:
+                            case 4:
                                 regresarMenu = true;
                                 break;
                             default:
@@ -161,15 +161,107 @@ public class Main {
 
                                 throw new AssertionError();
                         }
-                         if (go == true && regresarMenu == false) {
+                        if (go == true && regresarMenu == false) {
                             avanzar = opcion2.repetirOpcion(go);
                             regresarMenu = true;
-                         }
+                        }
                     } while (go == false);
                     break;
-                case 3:
 
+                case 3:
+                    OpcionAlimentacion opcion3 = new OpcionAlimentacion();
+                    boolean valid = true;
+                    do {
+                        System.out.println("Contamos con: \n"
+                                + "1. Gasas \n"
+                                + "2. Paracetamol \n"
+                                + "3. Vitaminas \n"
+                                + "Si desea regresar ingrese la opcion 4");
+                        regresarMenu = false;
+                        int act = sc.nextInt();
+                        switch (act) {
+                            case 1:
+                                System.out.println("Tenemos diferentes tipos de gasas"
+                                        + "\n 1.Monofilamento"
+                                        + "\n 2.Multifilamento"
+                                        + "\n 3.Tafetan");
+                                Gasas gasa1 = new Gasas();
+                                Gasas gasa2 = new Gasas();
+                                Gasas gasa3 = new Gasas();
+                                gasa2.setAdherencia("No adherente");
+                                gasa2.setTipodegasas("Multifilamento");
+                                gasa2.setContenido(100);
+                                gasa2.setMarca("Nexcare");
+                                gasa2.setPrecio(4);
+                                gasa3.setAdherencia("Adherente");
+                                gasa3.setTipodegasas("Tafetan");
+                                gasa3.setContenido(50);
+                                gasa3.setMarca("Dealmed");
+                                gasa3.setPrecio(5.7);
+                                gasa3.setPresentacion("Algodon");
+                                opcion3.desplegarMenu(gasa1, gasa2, gasa3, orden);
+                                orden.mostrarOrden();
+                                break;
+
+                            case 2:
+                                System.out.println("Tenemos paracetamol de tipo generico y comercial");
+                                Paracetamol para1 = new Paracetamol();
+                                Paracetamol para2 = new Paracetamol();
+                                Paracetamol para3 = new Paracetamol();
+                                para2.setContenido(600);
+                                para2.setPresentacion("Tableta");
+                                para2.setTipodeparacetamol("Generico");
+                                para2.setMarca("Bayer");
+                                para2.setPrecio(10.78);
+                                para2.setDosisdeparacetamol(7);
+                                para3.setContenido(450);
+                                para3.setMarca("Tempra");
+                                para3.setPrecio(9.69);
+                                para3.setDosisdeparacetamol(6);
+                                para3.setTipodeparacetamol("Generico");
+                                opcion3.desplegarMenu(para1, para2, para3, orden);
+                                orden.mostrarOrden();
+                                break;
+                            case 3:
+                                System.out.println("Tenemos diferentes sabores de vitaminas"
+                                        + "\n 1.Naranja"
+                                        + "\n 2.Sandia"
+                                        + "\n 3.Manzana");  
+                                        Vitaminas vit1 = new Vitaminas();
+                                        Vitaminas vit2 = new Vitaminas();
+                                        Vitaminas vit3 = new Vitaminas ();
+                                        vit2.setTipodevitamina("C");
+                                        vit2.setSabordelavitamina("Naranja");
+                                        vit2.setContenido(20);
+                                        vit2.setPresentacion("Capsula");
+                                        vit2.setPrecio(21.05);
+                                        vit2.setMarca("Microsules");
+                                        vit2.setName("Vitamina C");
+                                        vit3.setTipodevitamina("A");
+                                        vit3.setSabordelavitamina("Manzana");
+                                        vit3.setContenido(30);
+                                        vit3.setPresentacion("Pastillas");
+                                        vit3.setPrecio(11.05);
+                                        vit3.setMarca("Mediswiss");
+                                        vit3.setName("Vitamina A");
+                                        opcion3.desplegarMenu(vit1, vit2, vit3, orden);
+                                        orden.mostrarOrden();
+
+                                break;
+                            case 4:
+                                regresarMenu = true;
+                                break;
+                            default:
+                                valid = false;
+                                System.out.println("Opcion no valida");
+                        }
+                        if (valid == true && regresarMenu == false) {
+                            avanzar = opcion3.repetirOpcion(valid);
+                            regresarMenu = true;
+                        }
+                    } while (valid == false);
                     break;
+
                 case 4:
 
                     break;

@@ -37,9 +37,10 @@ public class Alimentos extends Producto {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("Feecha de expiracion : ").append(fechaexpiracion).append("\n");
-        sb.append("Procesado : ").append(procesado).append("\n");
-        sb.append(super.toString()).append("\n");
+        sb.append("Alimentos{");
+        sb.append("fechaexpiracion=").append(fechaexpiracion);
+        sb.append(", procesado=").append(procesado);
+        sb.append('}');
         return sb.toString();
     }
 
