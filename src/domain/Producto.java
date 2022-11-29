@@ -1,7 +1,9 @@
 package domain;
+//Clase padre de todos lo objetos que vamos a crear
 
 public class Producto {
 
+    //Atributos
     private int idProducto;
     protected double precio;
     protected boolean disponible;
@@ -10,6 +12,7 @@ public class Producto {
     private static int contadorProductos;
     private int cantidad;
 
+    //Constructores
     protected Producto() {
         this.idProducto = ++Producto.contadorProductos;
     }
@@ -32,6 +35,7 @@ public class Producto {
         this.cantidad = cantidad;
     }
 
+    //Metodos get y set para cada atributo
     public int getCantidad() {
         return cantidad;
     }
@@ -60,8 +64,14 @@ public class Producto {
         this.precio = precio;
     }
 
-    public boolean isDisponibile() {
-        return disponible;
+    public String isDisponibile() {
+        String disponibilidad = null;
+        if (disponible) {
+            disponibilidad = "Esta disponible";
+        } else if (!disponible) {
+            disponibilidad = "Agotado";
+        }
+        return disponibilidad;
     }
 
     public void setDisponibile(boolean disponibilidad) {
@@ -80,13 +90,14 @@ public class Producto {
         return contadorProductos;
     }
 
+    //Metodo especial toString para mostrar informacion
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("ID del producto: ").append(idProducto).append("\n");
         sb.append("Precio del producto: ").append(precio).append("\n");
-        sb.append("Disponibilidad : ").append(disponible).append("\n");
-        sb.append("Cantidad de este producto : ").append(cantidad).append("\n");       
+        sb.append("Disponibilidad : ").append(isDisponibile()).append("\n");
+        sb.append("Cantidad de este producto : ").append(cantidad).append("\n");
         sb.append("Marca del Producto : ").append(marca);
         return sb.toString();
     }

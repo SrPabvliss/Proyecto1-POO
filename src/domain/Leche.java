@@ -1,12 +1,13 @@
 package domain;
 
 import java.util.GregorianCalendar;
-
+//Clase hija de alimentos
 public class Leche extends Alimentos {
-
+    //Atributos
     private double cantidadLitros;
     private String tipoLeche;
-
+    
+    //Constructores
     public Leche() {
         super(new GregorianCalendar(2023, 2, 11).getTime(), true, 0.80, true, "Nutrileche", "Bolsa de leche");
         this.cantidadLitros = 1;
@@ -18,7 +19,7 @@ public class Leche extends Alimentos {
         this.cantidadLitros = 2;
         this.tipoLeche = "Entera";
     }
-    
+    //Metodo set y get para cada atributo
     public double getCantidadLitros() {
         return cantidadLitros;
     }
@@ -34,7 +35,7 @@ public class Leche extends Alimentos {
     public void setTipoLeche(String tipoLeche) {
         this.tipoLeche = tipoLeche;
     }
-
+    //Metodo para mostrar informacion
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();

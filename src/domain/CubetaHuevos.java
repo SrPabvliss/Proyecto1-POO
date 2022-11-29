@@ -1,19 +1,23 @@
-
 package domain;
 
 import java.util.Date;
 import java.util.GregorianCalendar;
+//Clase hija de alimentos
 
 public class CubetaHuevos extends Alimentos {
+
+    //Atributos
     private String tipoHuevos;
     private String tamanio;
 
-    public CubetaHuevos(){
+    //Constructor
+    public CubetaHuevos() {
         super(new GregorianCalendar(2023, 2, 11).getTime(), false, 4.50, true, "Supermaxi", "Cubeta de huevos");
         this.tipoHuevos = "Runas";
         this.tamanio = "Medianos";
     }
 
+    //Metodos
     public String getTipoHuevos() {
         return tipoHuevos;
     }
@@ -30,7 +34,8 @@ public class CubetaHuevos extends Alimentos {
         this.tamanio = tamanio;
     }
 
-        @Override
+    //Metodo para mostrar informacion
+    @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("Tipo de Huevos : ").append(tipoHuevos).append("\n");
@@ -38,6 +43,5 @@ public class CubetaHuevos extends Alimentos {
         sb.append("").append(super.toString()).append("\n");
         return sb.toString();
     }
-    
-    
+
 }

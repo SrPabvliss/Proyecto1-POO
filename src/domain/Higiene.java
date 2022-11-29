@@ -1,18 +1,22 @@
 package domain;
 
 import java.util.Date;
+//Clase hija de producto
 
 public class Higiene extends Producto {
-    
+
+    //Atributos
     protected Date fechaExpi;
     protected String calidad;
 
+    //Constructor
     public Higiene(Date fechaExpi, String calidad, double precio, boolean disponibilidad, String marca, String name) {
         super(precio, disponibilidad, marca, name);
         this.fechaExpi = fechaExpi;
         this.calidad = calidad;
     }
 
+    //Metodos
     public Date getFechaExpi() {
         return fechaExpi;
     }
@@ -29,6 +33,7 @@ public class Higiene extends Producto {
         this.calidad = calidad;
     }
 
+    //Metodo para mostrar informacion
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -37,6 +42,5 @@ public class Higiene extends Producto {
         sb.append(super.toString()).append("\n");
         return sb.toString();
     }
-    
-    
+
 }

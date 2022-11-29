@@ -2,16 +2,19 @@ package domain;
 
 import java.util.Scanner;
 
-public class OpcionAlimentacion {
+public class Opciones {
 
+    //atributos
     private Scanner sc;
     Producto producto;
 
+    //bloque de inicializacion
     {
         this.sc = new Scanner(System.in);
 
     }
 
+    //Metodo para desplegar menu dependiendo el producto(3)
     public void desplegarMenu(Producto producto, Producto producto2, Producto producto3, Orden orden) {
 
         System.out.println("--------------------------------------------------------------------------------\nOPCION 1");
@@ -43,6 +46,7 @@ public class OpcionAlimentacion {
 
     }
 
+    //Metodo para desplegar menu dependiendo el producto (2)
     public void desplegarMenu(Producto producto, Producto producto2, Orden orden) {
 
         System.out.println("--------------------------------------------------------------------------------\nOPCION 1");
@@ -70,6 +74,7 @@ public class OpcionAlimentacion {
 
     }
 
+    //Metodo para agregar mas de una unidad de cada producto
     public void agregarUnidades(Producto producto, Orden orden) {
         System.out.println("Desea agregar mas de una unidad? 1.si, 2.no");
         boolean validez;
@@ -95,25 +100,26 @@ public class OpcionAlimentacion {
         } while (validez == false);
     }
 
+    //metodo para repetir opciones
     public boolean repetirOpcion(Boolean avanzar) {
         System.out.println("Desea agregar mas productos de esta clase? 1.si, 2.no");
         boolean validez;
         do {
-            validez =true;
+            validez = true;
             switch (sc.nextInt()) {
-            case 1:
-                avanzar = false;
-                break;
-            case 2:
-                avanzar = true;
-                break;
-            default:
-                validez = false;
-                System.out.println("Opcion invalida");
-        }
-            
-        } while (validez==false);
-        
+                case 1:
+                    avanzar = false;
+                    break;
+                case 2:
+                    avanzar = true;
+                    break;
+                default:
+                    validez = false;
+                    System.out.println("Opcion invalida");
+            }
+
+        } while (validez == false);
+
         return avanzar;
     }
 

@@ -2,19 +2,20 @@ package domain;
 
 public class Orden {
 
+    //Atributos
     private int idOrden;
     private Producto producto[];
     private static int contadorOrdenes;
     private int contadorProductos;
     private final static int MAXPRODUCTOS = 30;
 
+    //Constructor
     public Orden() {
         this.idOrden = ++Orden.contadorOrdenes;
         this.producto = new Producto[MAXPRODUCTOS];
     }
-    
+
     //metodo para agregar productos al vector productos
-    //holaa
     public void agregarProducto(Producto producto) {
         if (this.contadorProductos < Orden.MAXPRODUCTOS) {
             this.producto[this.contadorProductos++] = producto;
@@ -25,6 +26,7 @@ public class Orden {
 
     }
 
+    //Metodo para calcular el total a pagar de la orden
     public double calcularTotal() {
         double total = 0;
         for (int i = 0; i < this.contadorProductos; i++) {
@@ -33,6 +35,7 @@ public class Orden {
         return total;
     }
 
+    //Metodo para mostrar los productos agregados a la orden
     public void mostrarOrden() {
         System.out.println("Id orden : " + this.idOrden + "\n");
 

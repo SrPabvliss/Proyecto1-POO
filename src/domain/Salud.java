@@ -1,13 +1,16 @@
-
 package domain;
-import java.util.Date;
 
-public class Salud  extends Producto{
-    
+import java.util.Date;
+//Clase hija de producto
+
+public class Salud extends Producto {
+
+    //Atributos
     protected Date expiracion;
     protected String presentacion;
     protected int contenido;
 
+    //Constructores
     public Salud(Date expiracion, String presentacion, int contenido, double precio, boolean disponibilidad, String marca, String name) {
         super(precio, disponibilidad, marca, name);
         this.expiracion = expiracion;
@@ -21,9 +24,9 @@ public class Salud  extends Producto{
         this.presentacion = presentacion;
         this.contenido = contenido;
     }
-    
-    
-     public Date getexpiracion() {
+
+    //Metodos
+    public Date getexpiracion() {
         return expiracion;
     }
 
@@ -46,20 +49,18 @@ public class Salud  extends Producto{
     public int getContenido() {
         return contenido;
     }
-    
-    
 
+    //Metodo para mostrar informacion
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        
+
         sb.append("La Fecha de expiracion es: ").append(expiracion).append("\n");
         sb.append("Presentacion: ").append(presentacion).append("\n");
         sb.append("El contenido del medicamento es de: ").append(contenido).append(" \n");
         sb.append("").append(super.toString()).append("\n");
-        
+
         return sb.toString();
     }
 
-   
 }

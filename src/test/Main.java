@@ -1,7 +1,7 @@
 package test;
 
 import domain.*;
-import domain.OpcionAlimentacion;
+import domain.Opciones;
 import domain.Orden;
 import java.util.Scanner;
 
@@ -12,6 +12,7 @@ public class Main {
         Orden orden = new Orden();
         System.out.println("Bienvenido al minimarket Don Bartolo");
         boolean regresarMenu;
+        //Ciclo repetitivo para repetir el menu completo
         do {
             regresarMenu = false;
 
@@ -21,8 +22,10 @@ public class Main {
 
             switch (opcion) {
                 case 1:
-                    OpcionAlimentacion opcion1 = new OpcionAlimentacion();
+                    //objeto de la clase opciones para desplegar el menu
+                    Opciones opcion1 = new Opciones();
                     boolean avanzar = false;
+                    //Ciclo repetitivo para repetir la opcion
                     do {
                         System.out.println("Te presento los productos de alimentacion disponibles");
                         System.out.println("1.Cubeta de huevos\n2.Funda de leche\n3.Saco de arroz\n4.Funda de pan\n5.Regresar ");
@@ -31,6 +34,7 @@ public class Main {
                         regresarMenu = false;
                         switch (seleccion) {
                             case 1 -> {
+                                //creacion de los objetos
                                 System.out.println("Contamos con 3 opciones de huevos:\n1.Medianos\n2.Grandes\n3.Extra Grandes");
                                 CubetaHuevos huevos1 = new CubetaHuevos();
                                 CubetaHuevos huevos2 = new CubetaHuevos();
@@ -86,6 +90,7 @@ public class Main {
                                 System.out.println("Opcion invalida");
                             }
                         }
+                        //condiciones para determinar cual menu repetir
                         if (avanzar == true && regresarMenu == false) {
                             avanzar = opcion1.repetirOpcion(avanzar);
                             regresarMenu = true;
@@ -94,9 +99,9 @@ public class Main {
                     } while (avanzar == false);
 
                     break;
-
+                //Se vuelven a aplicar los mismos pasos para generar las siguientes opciones
                 case 2:
-                    OpcionAlimentacion opcion2 = new OpcionAlimentacion();
+                    Opciones opcion2 = new Opciones();
                     boolean go = false;
                     do {
                         System.out.println("Te presento los productos de higiene disponibles");
@@ -176,7 +181,7 @@ public class Main {
                     break;
 
                 case 3:
-                    OpcionAlimentacion opcion3 = new OpcionAlimentacion();
+                    Opciones opcion3 = new Opciones();
                     boolean valid = false;
                     do {
                         System.out.println("Contamos con: \n1. Gasas \n2. Paracetamol \n3. Vitaminas \n4. Regresar");
@@ -261,6 +266,100 @@ public class Main {
                     break;
 
                 case 4:
+                    Opciones opcion4 = new Opciones();
+                    boolean continuar = false;
+                    do {
+                        System.out.println("Contamos con: \n1. Camisetas \n2. Pantalones \n3. Zapatos \n4. Regresar");
+                        regresarMenu = false;
+                        valid = true;
+                        int act = sc.nextInt();
+                        switch (act) {
+                            case 1:
+                                System.out.println("Tenemos diferentes tipos de Camisetas\n 1.Formales\n 2.Semiformales\n 3.Informales");
+                                Camiseta camiseta1 = new Camiseta();
+                                Camiseta camiseta2 = new Camiseta();
+                                Camiseta camiseta3 = new Camiseta();
+
+                                camiseta2.setTipoManga("Redonda");
+                                camiseta2.setTipoManga("Redonda");
+                                camiseta2.setMarca("Charvet");
+                                camiseta2.setPrecio(35.99);
+                                camiseta2.setMaterial("Lana");
+                                camiseta2.setPromocion("Si");
+
+                                camiseta3.setTipoManga("Ovalada");
+                                camiseta3.setTipoManga("Rectangular");
+                                camiseta3.setMarca("Gucci");
+                                camiseta3.setPrecio(49.99);
+                                camiseta3.setMaterial("Algodon");
+                                camiseta3.setPromocion("No");
+
+                                opcion4.desplegarMenu(camiseta1, camiseta2, camiseta3, orden);
+                                orden.mostrarOrden();
+                                break;
+
+                            case 2:
+                                System.out.println("Tenemos Diferentes estilos de pantalones: Exteriores y Jeans");
+                                Pantalon pantalon1 = new Pantalon();
+                                Pantalon pantalon2 = new Pantalon();
+                                Pantalon pantalon3 = new Pantalon();
+
+                                pantalon2.setTalla(32);
+                                pantalon2.setTipoPantalon("Slim fit");
+                                pantalon2.setMarca("Gucci");
+                                pantalon2.setPrecio(24.99);
+                                pantalon2.setMaterial("Cuero");
+                                pantalon2.setPromocion("si");
+
+                                pantalon3.setTalla(36);
+                                pantalon3.setTipoPantalon("Baggy fit");
+                                pantalon3.setMarca("Nike");
+                                pantalon3.setPrecio(44.99);
+                                pantalon3.setMaterial("Tela");
+                                pantalon3.setPromocion("No");
+
+                                opcion4.desplegarMenu(pantalon1, pantalon2, pantalon3, orden);
+                                orden.mostrarOrden();
+
+                                break;
+                            case 3:
+
+                                System.out.println("Tenemos diferentes tipos de zapatos\n 1.Punta cuadrada\n 2.Punta redonda\n 3.Punta triangular");
+
+                                Zapatos zap1 = new Zapatos();
+                                Zapatos zap2 = new Zapatos();
+                                Zapatos zap3 = new Zapatos();
+
+                                zap2.setTipoZapato("Oxford");
+                                zap2.setTalla(43);
+                                zap2.setMarca("Chicco");
+                                zap2.setPrecio(125.99);
+                                zap2.setMaterial("Cuero");
+                                zap2.setPromocion("No");
+
+                                zap3.setTipoZapato("Botin");
+                                zap3.setTalla(45);
+                                zap3.setMarca("Drastik");
+                                zap3.setPrecio(53.99);
+                                zap3.setMaterial("Nylon");
+                                zap3.setPromocion("Si");
+
+                                opcion4.desplegarMenu(zap1, zap2, zap3, orden);
+                                orden.mostrarOrden();
+
+                                break;
+                            case 4:
+                                regresarMenu = true;
+                                break;
+                            default:
+                                valid = false;
+                                System.out.println("Opcion no valida");
+                        }
+                        if (valid == true && regresarMenu == false) {
+                            valid = opcion4.repetirOpcion(valid);
+                            regresarMenu = true;
+                        }
+                    } while (valid == false);
 
                     break;
                 default:

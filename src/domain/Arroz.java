@@ -1,18 +1,22 @@
 package domain;
 
 import java.util.GregorianCalendar;
+//Clase hija de alimentos
 
 public class Arroz extends Alimentos {
 
+    //Atributos
     private String tipoArroz;
     private int cantidadLibras;
 
+    //Constructor
     public Arroz() {
         super(new GregorianCalendar(2023, 2, 11).getTime(), true, 3.75, true, "SuperExtra", "Saco de arroz");
         this.tipoArroz = "Blanco";
         this.cantidadLibras = 5;
     }
 
+    //Metodos
     public String getTipoArroz() {
         return tipoArroz;
     }
@@ -29,6 +33,7 @@ public class Arroz extends Alimentos {
         this.cantidadLibras = cantidadLibras;
     }
 
+    //Metodo para mostrar informacion
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();

@@ -1,24 +1,29 @@
 package domain;
 
+import java.io.File;
 import java.util.Date;
 
 public class Factura {
 
+    //Metodos
     private String NombreCliente;
     private int CedulaCliente;
     private Date fechaEmision;
 
+    //Constructor
     public Factura(String NombreCliente, int CedulaCliente) {
         this.NombreCliente = NombreCliente;
         this.CedulaCliente = CedulaCliente;
         this.fechaEmision = new Date();
     }
-    
-    public void generarFactura (Orden orden){
-        
+
+    //Metodo para generar factura fisica
+    public void generarFactura(Orden orden) {
+
     }
-    
-    public void generarFactura (Orden orden, String correo){
+
+    //Metodo para generar factura virtual
+    public void generarFactura(Orden orden, String correo) {
         System.out.println("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX");
         System.out.println("Nombre del cliente: " + this.NombreCliente);
         System.out.println("C.I: " + this.CedulaCliente);
@@ -47,6 +52,7 @@ public class Factura {
         this.CedulaCliente = CedulaCliente;
     }
 
+    //Metodo para mostrar informacion
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();

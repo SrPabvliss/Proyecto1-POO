@@ -2,16 +2,22 @@ package domain;
 
 import java.util.Date;
 import java.util.GregorianCalendar;
+//Clase hija de higiene
 
-public class Jabon extends Higiene{
+public class Jabon extends Higiene {
+
+    //Atributos
     private String acabado;
     private String tipojabon;
-    public Jabon(){
+
+    //Constructor
+    public Jabon() {
         super(new GregorianCalendar(2023, 2, 11).getTime(), "Buena", 1.50, true, "Dove", "Caja de jabones");
         this.acabado = "Mate";
         this.tipojabon = "Piel Neutra";
     }
 
+    //Metodos
     public String getAcabado() {
         return acabado;
     }
@@ -28,6 +34,7 @@ public class Jabon extends Higiene{
         this.tipojabon = tipojabon;
     }
 
+    //Metodo para mostrar informacion
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -36,7 +43,5 @@ public class Jabon extends Higiene{
         sb.append("").append(super.toString()).append("\n");
         return sb.toString();
     }
-    
-    
-  
+
 }

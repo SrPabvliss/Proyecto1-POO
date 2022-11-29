@@ -2,17 +2,21 @@ package domain;
 
 import java.util.Date;
 import java.util.GregorianCalendar;
+//Clase hija de higiene
 
-public class Champu extends Higiene{
+public class Champu extends Higiene {
+
     private String fragancia;
     private String cantidadsales;
 
+    //Constructor
     public Champu() {
-        super(new GregorianCalendar(2023, 2, 11).getTime(), "Buena", 4.50 , true, "Biolans", "Frassco de Champu");
+        super(new GregorianCalendar(2023, 2, 11).getTime(), "Buena", 4.50, true, "Biolans", "Frassco de Champu");
         this.fragancia = "Cacao";
         this.cantidadsales = "Sin sales";
     }
 
+    //Metodos
     public String getFragancia() {
         return fragancia;
     }
@@ -29,6 +33,7 @@ public class Champu extends Higiene{
         this.cantidadsales = cantidadsales;
     }
 
+    //Metodo para mostrar informacion
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -37,6 +42,5 @@ public class Champu extends Higiene{
         sb.append(super.toString()).append("\n");
         return sb.toString();
     }
-    
-    
+
 }

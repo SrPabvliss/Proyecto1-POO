@@ -2,17 +2,22 @@ package domain;
 
 import java.util.Date;
 import java.util.GregorianCalendar;
+//Clase hija de higiene
 
-public class PastaDental extends Higiene{
+public class PastaDental extends Higiene {
+
+    //Atributos
     private String sabor;
     private String elimbacterias;
 
+    //Constructor
     public PastaDental() {
-        super(new GregorianCalendar(2023, 2, 11).getTime(), "Buena", 2 , true, "Colgate", "Caja de dentifrico");
+        super(new GregorianCalendar(2023, 2, 11).getTime(), "Buena", 2, true, "Colgate", "Caja de dentifrico");
         this.sabor = "Menta";
         this.elimbacterias = "99.9 %";
     }
 
+    //Metodos
     public String getSabor() {
         return sabor;
     }
@@ -29,6 +34,7 @@ public class PastaDental extends Higiene{
         this.elimbacterias = elimbacterias;
     }
 
+    //Metodo para mostrar informacion
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -37,6 +43,5 @@ public class PastaDental extends Higiene{
         sb.append(super.toString()).append("\n");
         return sb.toString();
     }
-    
-    
+
 }
