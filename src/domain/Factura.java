@@ -12,11 +12,11 @@ public class Factura {
 
     //Metodos
     private String NombreCliente;
-    private int CedulaCliente;
+    private String CedulaCliente;
     private Date fechaEmision;
 
     //Constructor
-    public Factura(String NombreCliente, int CedulaCliente) {
+    public Factura(String NombreCliente, String CedulaCliente) {
         this.NombreCliente = NombreCliente;
         this.CedulaCliente = CedulaCliente;
         this.fechaEmision = new Date();
@@ -90,11 +90,11 @@ public class Factura {
         this.NombreCliente = NombreCliente;
     }
 
-    public int getCedulaCliente() {
+        public String getCedulaCliente() {
         return CedulaCliente;
     }
 
-    public void setCedulaCliente(int CedulaCliente) {
+    public void setCedulaCliente(String CedulaCliente) {
         this.CedulaCliente = CedulaCliente;
     }
 

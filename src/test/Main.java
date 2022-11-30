@@ -4,6 +4,8 @@ import domain.*;
 import domain.Opciones;
 import domain.Orden;
 import java.util.Scanner;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class Main {
 
@@ -365,27 +367,53 @@ public class Main {
                     } while (valid == false);
 
                     break;
-                case 5:
+                   case 5:
+                    boolean comp=false;
                     System.out.println("A continuacion, se muestra la orden completa");
                     orden.mostrarOrden();
                     System.out.println("\nDATOS PARA LA FACTURA\nIngresa tu nombre: ");
                     String nombre = sc2.nextLine();
-                    System.out.println("Ingresa tu numero de cedula");
-                    int cedula = sc.nextInt();
+                    String cedula ="";
+                    do {
+                        System.out.println("Con el siguiente formato\n***1234567891***\nIngrese ");
+                        System.out.print("Numero de cedula: ");
+                        cedula = sc.next();
+                        Pattern pat = Pattern.compile("^[0-9]{10}$");
+                        Matcher mat = pat.matcher(cedula);
+                        if(mat.find()){
+                            System.out.println("Numero de cedula valido");
+                            comp = true;
+                        }else{
+                            System.out.println("*********CEDULA NO VALIDA*********\nIntente de nuevo");
+                            comp = false;
+                        }
+                    } while (comp!=true); 
                     Factura factura = new Factura(nombre, cedula);
                     System.out.println("Tu factura puede ser:\n1. Electronica\n2. Fisica ");
                     regresarMenu = false;
                     switch (sc.nextInt()) {
                         case 1:
-                            System.out.println("Ingresa tu correo electronico");
-                            String correo = sc.next();
-                            factura.generarFactura(orden, correo);
+                            String email = "";
+                            do {
+                                System.out.print("Introduce email: ");
+                                email = sc2.nextLine();
+                                Pattern pat = Pattern.compile("^([\\w­])+([@[\\D][.com]])+$");
+                                Matcher mat = pat.matcher(email);
+                                if(mat.find()){
+                                    System.out.println("Correo electronico valido");
+                                    comp = true;
+                                }else{
+                                    System.out.println("Correo electronico no valido\nIntente de nuevo");
+                                    comp = false;
+                                }
+                            } while (comp!=true);
+                            factura.generarFactura(orden, email);
                             break;
                         case 2:
                             factura.generarFactura(orden);
-                            System.out.println("Gracias por tu compra! Tu factura ha sido generada");
                             break;
                         default:
+                            System.out.println("Gracias por tu compra! Tu factura ha sido generada");
                             throw new AssertionError();
                     }
                     break;
