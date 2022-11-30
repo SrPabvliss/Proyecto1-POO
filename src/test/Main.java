@@ -9,7 +9,9 @@ public class Main {
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
+        Scanner sc2 = new Scanner(System.in);
         Orden orden = new Orden();
+
         System.out.println("Bienvenido al minimarket Don Bartolo");
         boolean regresarMenu;
         //Ciclo repetitivo para repetir el menu completo
@@ -17,7 +19,7 @@ public class Main {
             regresarMenu = false;
 
             System.out.println("Que tipo de producto estas buscando?");
-            System.out.println("1.Alimentos\n2.Higiene\n3.Salud\n4.Vestimenta");
+            System.out.println("1.Alimentos\n2.Higiene\n3.Salud\n4.Vestimenta\n5.Finalizar compra");
             int opcion = sc.nextInt();
 
             switch (opcion) {
@@ -351,6 +353,7 @@ public class Main {
                             case 4:
                                 regresarMenu = true;
                                 break;
+
                             default:
                                 valid = false;
                                 System.out.println("Opcion no valida");
@@ -361,6 +364,29 @@ public class Main {
                         }
                     } while (valid == false);
 
+                    break;
+                case 5:
+                    System.out.println("A continuacion, se muestra la orden completa");
+                    orden.mostrarOrden();
+                    System.out.println("\nDATOS PARA LA FACTURA\nIngresa tu nombre: ");
+                    String nombre = sc2.nextLine();
+                    System.out.println("Ingresa tu numero de cedula");
+                    int cedula = sc.nextInt();
+                    Factura factura = new Factura(nombre, cedula);
+                    System.out.println("Tu factura puede ser:\n1. Electronica\n2. Fisica ");
+                    regresarMenu = false;
+                    switch (sc.nextInt()) {
+                        case 1:
+                            System.out.println("Ingresa tu correo electronico");
+                            String correo = sc.next();
+                            factura.generarFactura(orden, correo);
+                            break;
+                        case 2:
+                            factura.generarFactura(orden);
+                            break;
+                        default:
+                            throw new AssertionError();
+                    }
                     break;
                 default:
                     throw new AssertionError();
