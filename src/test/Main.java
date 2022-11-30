@@ -383,6 +383,7 @@ public class Main {
                             break;
                         case 2:
                             factura.generarFactura(orden);
+                            System.out.println("Gracias por tu compra! Tu factura ha sido generada");
                             break;
                         default:
                             throw new AssertionError();

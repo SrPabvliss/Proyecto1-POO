@@ -3,11 +3,11 @@ package domain;
 public class Orden {
 
     //Atributos
-    private int idOrden;
-    private Producto producto[];
-    private static int contadorOrdenes;
-    private int contadorProductos;
-    private final static int MAXPRODUCTOS = 30;
+    protected int idOrden;
+    protected Producto producto[];
+    protected static int contadorOrdenes;
+    protected int contadorProductos;
+    protected final static int MAXPRODUCTOS = 30;
 
     //Constructor
     public Orden() {
@@ -49,5 +49,7 @@ public class Orden {
         System.out.println("Valor total de la orden : " + this.calcularTotal());
 
     }
+    
+    
 
 }
