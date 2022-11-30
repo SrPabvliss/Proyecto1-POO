@@ -397,7 +397,7 @@ public class Main {
                             do {
                                 System.out.print("Introduce email: ");
                                 email = sc2.nextLine();
-                                Pattern pat = Pattern.compile("^([\\w­])+([@[\\D][.com]])+$");
+                                Pattern pat = Pattern.compile("^([\\w­])+@+[\\D]+([.com])+$");
                                 Matcher mat = pat.matcher(email);
                                 if(mat.find()){
                                     System.out.println("Correo electronico valido");
